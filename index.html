@@ -6,6 +6,36 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146663027-1"></script>
 <script>
+function nightdayhandler(self) {
+    var target = document.querySelector('body');
+    if (self.value === 'night') {
+      target.style.backgroundColor = 'black';
+      target.style.color = 'white';
+      self.value = 'day';
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+       while (i < alist.length) {
+      console.log(alist[i]);
+      alist[i].style.color = 'powderblue';
+      i = i + 1;
+      };
+    } else {
+      target.style.backgroundColor = 'white';
+      target.style.color = 'black';
+      self.value = 'night';
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+       while (i < alist.length) {
+      console.log(alist[i]);
+      alist[i].style.color = 'blue';
+      i = i + 1;
+      };
+    };
+  };
+</script>
+<script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -15,13 +45,55 @@
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
+
+<!--
+  <input type="button" value="night" onclick="
+    document.querySelector('body').style.backgroundColor = 'black';
+    document.querySelector('body').style.color = 'white';
+  ">
+  <input type="button" value="day" onclick="
+    document.querySelector('body').style.backgroundColor = 'white';
+    document.querySelector('body').style.color = 'black';
+  ">
+-->
+
+<!--
+  <input id="night_day" type="button" value="night" onclick="
+  if (document.querySelector('#night_day').value === 'night') {
+    document.querySelector('body').style.backgroundColor = 'black';
+    document.querySelector('body').style.color = 'white';
+    document.querySelector('#night_day').value = 'day';
+  } else {
+    document.querySelector('body').style.backgroundColor = 'white';
+    document.querySelector('body').style.color = 'black';
+    document.querySelector('#night_day').value = 'night';
+  }
+  ">
+-->
+
+  <input type="button" value="night" onclick="
+    nightdayhandler(this);
+  ">
+  <input type="button" value="night" onclick="
+    nightdayhandler(this);
+  ">
+
   <ol>
     <li><a href="1.html">HTML</a></li>
     <li><a href="2.html">CSS</a></li>
     <li><a href="3.html">JavaScript</a></li>
   </ol>
   <h2>WEB</h2>
-  <p>The World Wide Web (abbreviated WWW or the Web) is an information space where documents and other web resources are identified by Uniform Resource Locators (URLs), interlinked by hypertext links, and can be accessed via the Internet.[1] English scientist Tim Berners-Lee invented the World Wide Web in 1989. He wrote the first web browser computer program in 1990 while employed at CERN in Switzerland.[2][3] The Web browser was released outside of CERN in 1991, first to other research institutions starting in January 1991 and to the general public on the Internet in August 1991.
+  <p>The World Wide Web (abbreviated WWW or the Web) is an information
+    space where documents and other web resources are identified by Uniform
+    Resource Locators (URLs), interlinked by hypertext links, and can be
+    accessed via the Internet.[1] English scientist Tim Berners-Lee invented
+     the World Wide Web in 1989. He wrote the first web browser computer
+     program in 1990 while employed at CERN in Switzerland.[2][3] The Web
+     browser was released outside of CERN in 1991, first to other research
+      institutions starting in January 1991 and to the general public on the
+      Internet in August 1991.
   </p>
+
 </body>
 </html>
